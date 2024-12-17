@@ -1,0 +1,20 @@
+npm init -y pour initialiser le projet nodejs 
+
+Si node_modules modifier --> npm i   (pour réinstaller) 
+
+npm i nodemon --save-dev (--save-dev sauvegarde dans la DevDependencies)
+
+
+SOLID :
+
+S - Single Responsibility Principle
+            (Une classe ou un module doit avoir une seule responsabilité (faire une seule chose et bien le faire))
+O - Open/Closed Principle
+        (Ouvert à l'extension, fermé à la modification)
+        (Exemple : Si tu veux ajouter une nouvelle fonctionnalité, fais-le via une extension plutôt qu'en modifiant le code existant)
+L - Liskov Substitution Principle
+            (Les sous-classes doivent pouvoir être utilisées à la place des classes parentes sans problème)
+I - Interface Segregation Principle
+            (Ne pas forcer une classe à implémenter des méthodes qu'elle n'utilise pas)
+D - Dependency Inversion Principle
+            (Une classe doit dépendre d'abstractions et non de classes concrètes)
