@@ -14,8 +14,7 @@ const homepageController = require(path.join(__dirname, "../src/Controller/Homep
 // 2. definition des routes (path + method HTPP(get,post) + controlleur)
 // syntaxe : router.<methodHTPP>(path, [middleware, ] controller)
 
-// Homepage
-router.get("/", homepageController.index);
+router.get("/", homepageController.index); //Homepage
 // ou d'autres comme about, contact , etc
 
 // Exportation du routeur pour l'utiliser dans l'application principale

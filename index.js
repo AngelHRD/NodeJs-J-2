@@ -27,6 +27,15 @@ app.set("views", path.join(__dirname, "templates")); // Chemin absolue et de fac
 app.set("view engine", "html"); // Par defaut les views sont en ".ejs"
 app.engine("html", ejs.__express); // donc on impose les vues en ".html"
 
+// Definition de l'accés au repertoire public (avoir accés via le nav)
+// -> Si le css est dans /public/styles/main.css
+// --> l'accés sera :"http://site.com/styles/main.css"
+app.use(express.static(path.join(__dirname, "public")));
+
+// Acces à bootstrap
+app.use("/css", express.static(path.join(__dirname, "/node_modules/bootstrap/dist/css/")));
+app.use("/js", express.static(path.join(__dirname, "/node_modules/bootstrap/dist/js/")));
+
 // Middleware pour utiliser les routes définies dans "router.js"
 app.use(require(path.join(__dirname, "./config/router")));
 
