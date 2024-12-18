@@ -19,8 +19,7 @@ exports.create = (request, response) => {
 
   // Procédure d'enregistrement de la données SI :
   // -> La méthode de request est POST
-  // -> ET que
-  // -> La liste des "errors" est vide
+  // -> ET que la liste des "errors" est vide
   if (request.method === "POST" && errors.isEmpty()) {
     console.log(title);
   }
