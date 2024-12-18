@@ -5,10 +5,18 @@ exports.index = (resquest, response) => {
   response.render("pages/books/index");
 };
 // create (creer un livre)
-exports.create = (resquest, response) => {};
+exports.create = (resquest, response) => {
+  response.render("pages/books/create");
+};
 // read (lire les détails d'un livre)
-exports.read = (resquest, response) => {};
+exports.read = (resquest, response) => {
+  response.render("pages/books/read");
+};
 // update (modifier les données d'un livre)
-exports.update = (resquest, response) => {};
+exports.update = (resquest, response) => {
+  response.render("pages/books/update");
+};
 // delete (supprimer un livre)
-exports.delete = (resquest, response) => {};
+exports.delete = (resquest, response) => {
+  response.render("pages/books/delete");
+};

@@ -6,6 +6,8 @@ const express = require("express");
 const ejs = require("ejs");
 const path = require("path");
 
+const config = require("./config/config");
+
 //-----------------------------------------------------------------------------
 
 // Création d'une instance de l'application Express
@@ -23,7 +25,7 @@ const port = 3000;
 // Définir le répertoire des templates (vues)
 app.set("views", path.join(__dirname, "templates")); // Chemin absolue et de facon dynamique avec le __dirname
 
-// Definition du type de fichier (vues)
+// Definition du type de fichier (vues)(pas obligatoire)
 app.set("view engine", "html"); // Par defaut les views sont en ".ejs"
 app.engine("html", ejs.__express); // donc on impose les vues en ".html"
 
@@ -35,6 +37,10 @@ app.use(express.static(path.join(__dirname, "public")));
 // Acces à bootstrap
 app.use("/css", express.static(path.join(__dirname, "/node_modules/bootstrap/dist/css/")));
 app.use("/js", express.static(path.join(__dirname, "/node_modules/bootstrap/dist/js/")));
+
+//Exports de variable js (config.js vers les vues HTML)
+// app.locals.app_title = config.app_title; // Pour un seul
+app.locals.config = config;
 
 // Middleware pour utiliser les routes définies dans "router.js"
 app.use(require(path.join(__dirname, "./config/router")));

@@ -12,9 +12,9 @@ const path = require("path");
 const homepageController = require(path.join(__dirname, "../src/Controller/HomepageController"));
 const aboutController = require(path.join(__dirname, "../src/Controller/AboutController"));
 const bookController = require(path.join(__dirname, "../src/Controller/BookController"));
-// 2. definition des routes (path + method HTPP(get,post) + controlleur)
-// syntaxe : router.<methodHTPP>(path, [middleware, ] controller)
 
+// definition des routes (path + method HTPP(get,post) + controlleur)
+// syntaxe : router.<methodHTPP>(path, [middleware, ] controller)
 router.get("/", homepageController.index); //Homepage
 router.get("/about", aboutController.index);
 router.get("/books", bookController.index);

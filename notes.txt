@@ -1,8 +1,16 @@
 npm init -y pour initialiser le projet nodejs 
-
 Si node_modules modifier --> npm i   (pour réinstaller) 
 
+
 npm i nodemon --save-dev (--save-dev sauvegarde dans la DevDependencies)
+npm run start pour lancer nodemon
+
+
+Definition MiddleWare : 
+Un middleware est une fonction qui agit comme un "intermédiaire" dans une application. Il traite les requêtes et réponses entre le client et le serveur
+
+Definition table des routes : 
+La table des routes est une structure utilisée dans une application pour définir quelles URLs (ou chemins) correspondent à quelles actions ou ressources. Elle fait le lien entre les requêtes des utilisateurs et les comportements du serveur.
 
 
 SOLID :
