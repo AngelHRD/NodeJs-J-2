@@ -21,10 +21,15 @@ exports.create = (request, response) => {
   // -> La méthode de request est POST
   // -> ET que la liste des "errors" est vide
   if (request.method === "POST" && errors.isEmpty()) {
-    console.log(title);
+    console.log("ENREGISTRE EN BDD");
   }
 
-  response.render("pages/books/create");
+  response.render("pages/books/create", {
+    errors: errors.array(),
+    title: title || "",
+    description: description || "",
+    price: price || "",
+  });
 };
 
 // read (lire les détails d'un livre)

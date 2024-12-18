@@ -10,6 +10,7 @@ exports.create = [
     .not()
     .isEmpty()
     .withMessage("Price is required")
+    .not()
     .isFloat({ max: 100 })
     .withMessage("Price must be less than or equal to 100"),
 ];

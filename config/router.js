@@ -17,11 +17,11 @@ const bookValidator = require(path.join(__dirname, "../src/Validator/BookValidat
 // syntaxe : router.<methodHTPP>(path, [middleware, ] controller)
 router.get("/", homepageController.index); //Homepage
 router.get("/about", aboutController.index);
-router.get("/books", bookValidator.create, bookController.index);
+router.get("/books", bookController.index);
 // ou d'autres comme contact, à propros , etc
 
 router.get("/book", bookController.create); // Affiche le formulaire
-router.post("/book", bookController.create); // Enregistre les données du formulaire
+router.post("/book", bookValidator.create, bookController.create); // Enregistre les données du formulaire
 
 router.get("/book/:id/edit", bookController.update); // Affiche le formulaire + les données du livre
 router.post("/book/:id/edit", bookController.update); // Enregistre les données du formulaire
