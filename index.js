@@ -51,4 +51,4 @@ app.use(require(path.join(__dirname, "./config/router")));
 //-----------------------------------------------------------------------------
 
 // Démarrage du serveur sur le port configuré
-app.listen(port, () => console.log(`Serveur en écoute... htpp://localhost:${port} `));
+app.listen(port, () => console.log(`Serveur en écoute... http://localhost:${port} `));
