@@ -1,3 +1,6 @@
+// Import des librairies
+const { validationResult } = require("express-validator");
+
 // index (liste de livres)
 exports.index = (request, response) => {
   response.render("pages/books/index");
@@ -7,9 +10,18 @@ exports.index = (request, response) => {
 exports.create = (request, response) => {
   // console.log(request.body);// Pour voir (dans le terminal) ce qu'on récup du formulaire
 
+  // Recupération des données du formulaire
+  // Les données ont la valeur "undefined" si le controller est executé avec la methode GET
   const { title, description, price } = request.body;
 
-  if (request.method === "POST") {
+  // Recupération du résultat du controle du formulaire (BookValidation)
+  const errors = validationResult(request);
+
+  // Procédure d'enregistrement de la données SI :
+  // -> La méthode de request est POST
+  // -> ET que
+  // -> La liste des "errors" est vide
+  if (request.method === "POST" && errors.isEmpty()) {
     console.log(title);
   }
 

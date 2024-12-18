@@ -3,7 +3,6 @@
 
 //-----------------------------------------------------------
 // Importation des modules nécessaires
-
 const express = require("express");
 const router = express.Router();
 const path = require("path");
@@ -12,13 +11,14 @@ const path = require("path");
 const homepageController = require(path.join(__dirname, "../src/Controller/HomepageController"));
 const aboutController = require(path.join(__dirname, "../src/Controller/AboutController"));
 const bookController = require(path.join(__dirname, "../src/Controller/BookController"));
+const bookValidator = require(path.join(__dirname, "../src/Validator/BookValidator"));
 
 // definition des routes (path + method HTPP(get,post) + controlleur)
 // syntaxe : router.<methodHTPP>(path, [middleware, ] controller)
 router.get("/", homepageController.index); //Homepage
 router.get("/about", aboutController.index);
-router.get("/books", bookController.index);
-// ou d'autres comme contact, jsp , etc
+router.get("/books", bookValidator.create, bookController.index);
+// ou d'autres comme contact, à propros , etc
 
 router.get("/book", bookController.create); // Affiche le formulaire
 router.post("/book", bookController.create); // Enregistre les données du formulaire
