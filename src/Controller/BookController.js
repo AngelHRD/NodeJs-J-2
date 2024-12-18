@@ -1,7 +1,9 @@
 //JSP PQ ON A FAIT CA
 
 // index (liste de livres)
-exports.index = (resquest, response) => {};
+exports.index = (resquest, response) => {
+  response.render("pages/books/index");
+};
 // create (creer un livre)
 exports.create = (resquest, response) => {};
 // read (lire les détails d'un livre)
