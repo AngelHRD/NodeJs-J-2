@@ -38,6 +38,9 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/css", express.static(path.join(__dirname, "/node_modules/bootstrap/dist/css/")));
 app.use("/js", express.static(path.join(__dirname, "/node_modules/bootstrap/dist/js/")));
 
+// Permet de lire les données envoyées via le formulaire
+app.use(express.urlencoded({ extended: true }));
+
 //Exports de variable js (config.js vers les vues HTML)
 // app.locals.app_title = config.app_title; // Pour un seul
 app.locals.config = config;

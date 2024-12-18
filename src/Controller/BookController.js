@@ -1,11 +1,15 @@
 //JSP PQ ON A FAIT CA
 
+const { request } = require("express");
+
 // index (liste de livres)
 exports.index = (resquest, response) => {
   response.render("pages/books/index");
 };
 // create (creer un livre)
 exports.create = (resquest, response) => {
+  console.log(request.body);
+
   response.render("pages/books/create");
 };
 // read (lire les détails d'un livre)
